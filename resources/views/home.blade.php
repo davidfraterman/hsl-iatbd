@@ -9,6 +9,16 @@
     <title>Home</title>
 </head>
 <body>
-    <p>Hi</p>
+    @foreach ($products as $product)
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ $product->name }}</h5>
+                <p class="card-text">{{ $product->description }}</p>
+                <p class="card-text">{{ $product->max_lend_time }}</p>
+                <p class="card-text">{{ $product->category }}</p>
+                <p class="card-text">{{ $product->is_lended_out }}</p>
+            </div>
+        </div>
+    @endforeach
 </body>
 </html>

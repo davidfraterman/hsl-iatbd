@@ -14,14 +14,14 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->increments('owner_id');
+            $table->string('owner_id');
             $table->string('name');
             $table->string('description');
             $table->string('image');
             $table->string('category');
             $table->string('max_lend_time');
             $table->boolean('is_lended_out')->default(false);
-
+            // $table->timestamps();
 
             // $table->foreign('category')->references('category')->on('categories');
             $table->timestamps();
