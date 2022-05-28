@@ -9,7 +9,7 @@
     <title>Home</title>
 </head>
 <body>
-    @foreach ($products as $product)
+    @foreach ($all-products as $product)
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">{{ $product->name }}</h5>

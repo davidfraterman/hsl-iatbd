@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function() {
     Route::get('/', [\App\Http\Controllers\ProductsController::class, 'index'])->middleware(['auth']);
+    Route::get('/products/{id}', [\App\Http\Controllers\ProductsController::class, 'show'])->middleware(['auth']);
+
+    Route::get('/users/{id}', [\App\Http\Controllers\UsersController::class, 'show'])->middleware(['auth']);
+
 });
 
 Route::get('/dashboard', function () {

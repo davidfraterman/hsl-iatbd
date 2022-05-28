@@ -16,14 +16,14 @@ class CategoriesTableSeeder extends Seeder
     {
         // english product category
         $categories_array = [
-            'electronics',
-            'furniture',
-            'clothing',
-            'books',
-            'sports',
-            'toys',
-            'tools',
-            'other',
+            'Electronics',
+            'Furniture',
+            'Clothing',
+            'Books',
+            'Sports',
+            'Toys',
+            'Tools',
+            'Other',
         ];
 
         foreach ($categories_array as $category) {

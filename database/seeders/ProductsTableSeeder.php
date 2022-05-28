@@ -20,7 +20,7 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Mooie iphone 11 zonder schade',
             'max_lend_time' => '1 week',
             'image' => 'product1.jpg',
-            'category' => 'electronics',
+            'category' => 'Electronics',
             'is_lended_out' => false,
         ]);
 
@@ -30,7 +30,17 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Mooie Stoomreiniger',
             'max_lend_time' => '2 weeks',
             'image' => 'product2.jpg',
-            'category' => 'electronics',
+            'category' => 'Tools',
+            'is_lended_out' => true,
+        ]);
+
+        DB::table('products')->insert([
+            'owner_id' => 1,
+            'name' => 'Bezem',
+            'description' => 'Mooie Bezem',
+            'max_lend_time' => '4 weeks',
+            'image' => 'product2.jpg',
+            'category' => 'Tools',
             'is_lended_out' => true,
         ]);
     }
