@@ -9,8 +9,8 @@
             </section>
         </a>
         <section class="reviewCard__stars">
-            {{$rating->rating}}
-            <span class="iconify" data-icon="bx:bx-star" style="color: var(--clr-primary); font-size: 18px;"></span>
+            {{$rating->rating}}/5
+            <span class="iconify" data-icon="bx:bx-star" style="color: var(--clr-primary); font-size: 20px;"></span>
         </section>
     </section>
     
