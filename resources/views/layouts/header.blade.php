@@ -6,12 +6,47 @@
         <ul class="header__links">
             <li class="header__link u-hover-underline-animation"><a href="/">All Products</a></li>
             <li class="header__link u-hover-underline-animation"><a href="/my-products">My Products</a></li>
+            <li class="header__link u-hover-underline-animation">
+                <a href="/users/{{Auth::user()->id}}">
+                    My Profile ({{Auth::user()->name}})
+                </a>
+            </li>
+            <li class="header__link">
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        <!-- logout icon -->
+                        <span class="iconify" data-icon="carbon:logout" style="color: #FBFBFB; font-size: 20px;"></span>                    </x-dropdown-link>
+                </form>
+            </li>
         </ul>
         <!-- mobile nav -->
         <ul class="header__mobileLinks" id="js--header__mobileLinks">
             <span class="iconify header__mobileLinks--close" id="js--header__mobileLinks--close" data-icon="carbon:close" style="font-size: 40px;"></span>
             <li class="header__mobileLink"><a href="/">All Products</a></li>
             <li class="header__mobileLink"><a href="/my-products">My Products</a></li>
+            <li class="header__mobileLink">
+                <a href="/users/{{Auth::user()->id}}">
+                    My Profile ({{Auth::user()->name}})
+                </a>
+            </li>
+            <li class="header__mobileLink">
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        <!-- logout icon -->
+                        <span class="iconify" data-icon="carbon:logout" style="color: #FBFBFB; font-size: 30px;"></span> 
+                   </x-dropdown-link>
+                </form>
+            </li>
         </ul>
     </article>
 </header>

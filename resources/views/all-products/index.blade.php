@@ -6,7 +6,7 @@
 @section('content')
 
 <main class="container">
-    <h1 class="pageTitle">Alle Producten</h1>
+    <h1 class="pageTitle">Alle Beschikbare Producten</h1>
     <ul class="allProducts__list">
         @foreach ($products as $product)
             @include('all-products.components.productCard--index')

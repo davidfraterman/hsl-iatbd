@@ -19,6 +19,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/users/{id}', [\App\Http\Controllers\UsersController::class, 'show'])->middleware(['auth']);
 
+    Route::get('/my-products', [\App\Http\Controllers\ProductsController::class, 'my_products'])->middleware(['auth']);
 });
 
 Route::get('/dashboard', function () {
