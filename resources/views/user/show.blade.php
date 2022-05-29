@@ -13,15 +13,14 @@
                 <span class="iconify" data-icon="bxs:user" style="color: var(--clr-black); font-size: 30px;"></span>
                 {{$user->name}}
             </h2>
-            <p class="userProfile__userEmail">
-                E-mail:
+            <p class="userProfile__userInfoWithIcon">
+                <span class="iconify" data-icon="bx:bx-envelope" style="color: var(--clr-primary); font-size: 18px;"></span>
                 {{$user->email}}
             </p>
-            <p> 
-                Aantal Reviews: {{$amount_of_ratings}}
-            </p>
-            <p>
-                Gemiddelde Beoordeling: {{$average_rating}}/5
+            <p class="userProfile__userInfoWithIcon">
+                <!-- star icon -->
+                <span class="iconify" data-icon="bx:bx-star" style="color: var(--clr-primary); font-size: 18px;"></span>
+                {{$average_rating}}/5 Gebaseerd op {{$amount_of_ratings}} beoordelingen
             </p>
             
             

@@ -57,7 +57,7 @@ class ProductsController extends Controller
         $product->owner_id = auth()->user()->id;
         $product->category = $request->input('category');
         $product->description = $request->input('description');
-        $product->image = 'products1.jpg';
+        $product->image = 'product1.jpg';
         $product->max_lend_time = $request->input('max_lend_time');
         $product->save();
 

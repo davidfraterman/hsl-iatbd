@@ -6,22 +6,22 @@
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="" :errors="$errors" />
-        <h2 class="authCard__title">Inloggen</h2>
+        <h2 class="formCard__title">Inloggen</h2>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <!-- Email Address -->
-            <div class="authCard__inputGroup">
+            <div class="formCard__inputGroup">
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="authCard__textInput" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="email" class="formCard__textInput" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <!-- Password -->
-            <div class="authCard__inputGroup">
+            <div class="formCard__inputGroup">
                 <x-label for="password" :value="__('Wachtwoord')" />
 
-                <x-input id="password" class="authCard__textInput"
+                <x-input id="password" class="formCard__textInput"
                                 type="password"
                                 name="password"
                                 required autocomplete="current-password" />
@@ -36,7 +36,7 @@
             </div>
 
             <div >
-                <a class="authCard__secondaryAction" href="{{ route('register') }}">
+                <a class="formCard__secondaryAction" href="{{ route('register') }}">
                     {{ __('Registreren?') }}
                 </a>
 

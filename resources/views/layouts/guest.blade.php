@@ -14,9 +14,11 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
     </head>
-    <body class="authContainer">
-        <div class="authCard font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
+    <body>
+        <article class="formContainer">
+            <div class="formCard font-sans text-gray-900 antialiased">
+                {{ $slot }}
+            </div>
+        </article>
     </body>
 </html>

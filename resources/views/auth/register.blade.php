@@ -2,7 +2,7 @@
     <x-auth-card>
         <!-- Validation Errors -->
         <x-auth-validation-errors :errors="$errors" />
-        <h2 class="authCard__title">Registreren</h2>
+        <h2 class="formCard__title">Registreren</h2>
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
@@ -10,21 +10,21 @@
             <div>
                 <x-label for="name" :value="__('Naam')" />
 
-                <x-input class="authCard__textInput" id="name" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input class="formCard__textInput" id="name" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
             <!-- Email Address -->
             <div >
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input class="authCard__textInput" id="email" type="email" name="email" :value="old('email')" required />
+                <x-input class="formCard__textInput" id="email" type="email" name="email" :value="old('email')" required />
             </div>
 
             <!-- Password -->
             <div >
                 <x-label for="password" :value="__('Wacthwoord')" />
 
-                <x-input id="password" class="authCard__textInput"
+                <x-input id="password" class="formCard__textInput"
                                 type="password"
                                 name="password"
                                 required autocomplete="new-password" />
@@ -34,13 +34,13 @@
             <div >
                 <x-label for="password_confirmation" :value="__('Herhaal Wachtwoord')" />
 
-                <x-input id="password_confirmation"  class="authCard__textInput" 
+                <x-input id="password_confirmation"  class="formCard__textInput" 
                                 type="password"
                                 name="password_confirmation" required />
             </div>
 
             <div>
-                <a class="authCard__secondaryAction" href="{{ route('login') }}">
+                <a class="formCard__secondaryAction" href="{{ route('login') }}">
                     {{ __('Inloggen?') }}
                 </a>
 
