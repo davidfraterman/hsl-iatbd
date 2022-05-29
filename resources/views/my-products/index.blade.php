@@ -6,7 +6,10 @@
 @section('content')
 
 <main class="container">
-    <h1 class="pageTitle">Mijn Producten ({{$amount_of_products}})</h1>
+    <section class="myProducts__heading">
+        <h1 class="pageTitle">Mijn Producten ({{$amount_of_products}})</h1>
+        <a href="/my-products/create" class="myProducts__addBtn">+ Voeg een product toe</a>
+    </section>
     <ul class="allProducts__list">
         @foreach ($products as $product)
             @include('my-products.components.myProductCard--index')

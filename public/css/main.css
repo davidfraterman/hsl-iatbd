@@ -2,6 +2,8 @@
     --clr-primary: #439079;
     --clr-white: #FBFBFB;
     --clr-black: #383838;
+    --clr-light-grey: #e2e2e2;
+    --clr-light-primary: #43907916;
     --clr-grey: #7e7e7e;
 }
 
@@ -25,6 +27,13 @@ body {
 
 button:hover, a:hover {
     cursor: pointer;
+}
+
+h3 {
+    color: var(--clr-black);
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
 }
 
 .container {
@@ -133,8 +142,6 @@ button:hover, a:hover {
 
 .pageTitle {
     font-size: 2.5rem;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
     color: var(--clr-black);
 }
 
@@ -145,6 +152,7 @@ button:hover, a:hover {
 }
 
 .allProducts__listItem {
+ 
     background-color: white;
     box-shadow: 3px 3px 20px -5px rgba(58, 107, 93, 0.15);
     border-radius: 2rem;
@@ -154,6 +162,9 @@ button:hover, a:hover {
 }
 
 .allProduct__listItem--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 2rem;
 }
 
@@ -164,9 +175,32 @@ button:hover, a:hover {
     align-items: center;
 }
 
+.allProducts__listItem--owner {
+    color: var(--clr-white);
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    background-color: #2d2d2d95;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 1rem;
+}
+
+.allProducts__listItem--owner > a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.allProducts__listItem--owner:hover {
+    cursor: pointer;
+}
+
 .allProducts__listItem--figure {
     width: 100%;
     height: 25vh;
+    position: relative;
 }
 
 .allProducts__listItem--image {
@@ -178,11 +212,10 @@ button:hover, a:hover {
 }
 
 .allProducts__listItem--title {
-   color: var(--clr-black);
-   font-size: 1.75rem; 
-   font-weight: 600;
-   margin-bottom: 0.5rem;
-   text-decoration: none;
+    color: var(--clr-black);
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
 }
 
 .allProducts__listItem--description {
@@ -207,7 +240,6 @@ button:hover, a:hover {
     margin-bottom: .75rem;
     border-radius: 0.75rem;
     display: inline-block;
-    text-transform: capitalize;
 }
 
 .primaryButton {
@@ -260,9 +292,11 @@ button:hover, a:hover {
 }
 
 .oneProduct__title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    color: var(--clr-black);
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
 }
 
 .oneProduct__description {
@@ -307,7 +341,7 @@ button:hover, a:hover {
 .authContainer {
     margin: 0 auto;
     max-width: 500px;
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
 .authCard {
@@ -359,6 +393,106 @@ button:hover, a:hover {
     margin-top: 2rem;
 }
 
+.userProfile__userInfoTitle {
+color: var(--clr-black);
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+}
+
+.userProfile__userInfo {
+    display: block;
+}
+
+.userProfile__userName {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    gap: 0.75rem;
+}
+
+.userProfile__subTitle {
+    color: var(--clr-black);
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    margin-top: 4rem;
+}
+
+.allRatings__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.reviewCard__stars {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.reviewCard {
+    background-color: var(--clr-white);
+    box-shadow: 3px 3px 20px -5px rgba(58, 107, 93, 0.15);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 100%;
+}
+
+a, a:link,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.reviewCard__reviewer {
+    background-color: var(--clr-light-primary);
+    padding: 0.75rem;
+    color: var(--clr-primary);
+    border-radius: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+   
+}
+
+.reviewCard__reviewer:hover {
+    cursor: pointer;
+}
+
+
+.myProducts__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.myProducts__addBtn {
+    background-color: transparent;
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-primary);
+    border-radius: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    box-shadow: 3px 3px 29px -14px rgba(0, 0, 0, 0.15);
+    transition: 0.2s all;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+}
+
+.myProducts__addBtn:hover {
+    box-shadow: 3px 3px 29px -14px rgba(0, 0, 0, 0.4);
+}
 
 /* utility classes */
 

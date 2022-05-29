@@ -17,15 +17,29 @@ class ReviewsTableSeeder extends Seeder
         DB::table('reviews')->insert([
             'user_id' => 2,
             'lender_id' => 1,
-            'rating' => 5,
-            'comment' => 'Bedankt voor het lenen van de iphone 11',
+            'rating' => 4,
+            'comment' => 'Bedankt voor het lenen, top product!',
         ]);
 
         DB::table('reviews')->insert([
             'user_id' => 2,
             'lender_id' => 1,
-            'rating' => 4,
-            'comment' => 'Bedankt voor het lenen van de stoomreiniger',
+            'rating' => 3,
+            'comment' => 'Het product is niet zo goed als ik verwacht had, maar wel ontzettend bedankt voor het lenen!',
+        ]);
+
+        DB::table('reviews')->insert([
+            'user_id' => 1,
+            'lender_id' => 2,
+            'rating' => 5,
+            'comment' => 'Komt afspraken na!',
+        ]);
+
+        DB::table('reviews')->insert([
+            'user_id' => 1,
+            'lender_id' => 2,
+            'rating' => 2,
+            'comment' => 'Product is anders dan vermeld..',
         ]);
     }
 }

@@ -21,8 +21,8 @@ class CreateReviewsTable extends Migration
             $table->text('comment');
             $table->timestamps();
 
-            // $table->foreign('user_id')->references('id')->on('users');
-            // $table->foreign('lender_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('lender_id')->references('id')->on('users');
         });
     }
 
@@ -33,6 +33,12 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
+
+        Schema::table('reviews', function (Blueprint $table) {
+            $table->dropForeign('reviews_user_id_foreign');
+            $table->dropForeign('reviews_lender_id_foreign');
+        });
+
         Schema::dropIfExists('reviews');
     }
 }

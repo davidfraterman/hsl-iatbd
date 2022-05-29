@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use HasFactory;
+
     protected $table = 'products';
 
-    public function categoryModel() {
-        return $this->belongsTo('App\Models\Category', 'category_id');
+    public function productOwner(){
+        return $this->belongsTo('\App\Models\User',"owner_id","id");
     }
 }
