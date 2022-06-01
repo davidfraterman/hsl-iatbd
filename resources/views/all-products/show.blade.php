@@ -1,5 +1,5 @@
 @section('title')
-    {{"All Products"}}
+    {{'Product ' . $product->name}}
 @endsection
 
 @extends('body')
@@ -29,14 +29,26 @@
                 <span class="iconify" data-icon="bxs:user" style="color: var(--clr-black); font-size: 25px;"></span>
                 <section class="oneProduct__productOwner--details">
                     <p>
-                        Owner: {{$product_owner->name}}
+                        Eigenaar: {{$product_owner->name}}
                     </p>
                     <p>
                         E-mail: {{$product_owner->email}}
                     </p>
                 </section>
             </a>
-            <button class="primaryButton">Lenen</button>
+
+            
+
+            @if($product_owner->id == Auth::user()->id)       
+                <button type="disabled" class="disabledButton primaryButton">Dit is uw product</button>     
+            @else
+                <form method="POST" action="/my-lend-requests/create">
+                    @csrf
+                    <input type="hidden" value="{{$product->id}}" name="product_id">
+                <button type="submit" class="primaryButton">Lenen Aanvragen</button>
+            </form>       
+            @endif
+            
         </section>
         
     </article>

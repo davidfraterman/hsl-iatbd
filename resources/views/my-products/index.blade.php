@@ -1,5 +1,5 @@
 @section('title')
-    {{"My Products"}}
+    {{"Mijn Producten"}}
 @endsection
 
 @extends('body')
@@ -15,7 +15,6 @@
             @include('my-products.components.myProductCard--index')
         @endforeach
     </ul>
-    
 </main>
 
 @endsection

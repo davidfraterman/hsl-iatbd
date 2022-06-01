@@ -1,5 +1,5 @@
 @section('title')
-    {{"Add Product"}}
+    {{"Maak Product Aan"}}
 @endsection
 
 @extends('body')
@@ -8,7 +8,7 @@
 <main>
     <article class="formContainer">
       
-        <form class="formCard" action="/my-products" method="POST">
+        <form class="formCard" action="/my-products/create" method="POST">
             <a href="/my-products">
                 <span  class="formCard__backBtn iconify" data-icon="bx:bx-arrow-back" data-inline="false"></span>
             </a>

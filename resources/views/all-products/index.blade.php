@@ -1,5 +1,5 @@
 @section('title')
-    {{"All Products"}}
+    {{"Alle Producten"}}
 @endsection
 
 @extends('body')

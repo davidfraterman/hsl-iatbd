@@ -52,4 +52,15 @@ class User extends Authenticatable
         return $this->hasMany('\App\Models\Review',"lender_id","id");
     }
 
+    public function currentLends(){
+        return $this->hasMany('\App\Models\CurrentLend',"product_owner_id","id");
+    }
+
+    public function currentBorrows() {
+        return $this->hasMany('\App\Models\CurrentLend', 'borrower_id', 'id');
+    }
+
+    public function currentLendRequests(){
+        return $this->hasMany('\App\Models\LendRequest',"product_owner_id","id");
+    }
 }

@@ -4,8 +4,9 @@
         <span class="iconify header__hamburger" id="js--header__hamburger" data-icon="cil:hamburger-menu" style="color: var(--clr-white); font-size: 30px;"></span>
         <!-- desktop nav -->
         <ul class="header__links">
-            <li class="header__link u-hover-underline-animation"><a href="/">Alle Producten</a></li>
             <li class="header__link u-hover-underline-animation"><a href="/my-products">Mijn Producten</a></li>
+            <li class="header__link u-hover-underline-animation"><a href="/my-lend-requests">Mijn Aanvragen</a></li>
+            <li class="header__link u-hover-underline-animation"><a href="/my-current-lends">Lenen & Uitlenen</a></li>
             <li class="header__link u-hover-underline-animation">
                 <a href="/users/{{Auth::user()->id}}">
                     Mijn Profiel ({{Auth::user()->name}})
@@ -27,8 +28,9 @@
         <!-- mobile nav -->
         <ul class="header__mobileLinks" id="js--header__mobileLinks">
             <span class="iconify header__mobileLinks--close" id="js--header__mobileLinks--close" data-icon="carbon:close" style="font-size: 40px;"></span>
-            <li class="header__mobileLink"><a href="/">Alle Producten</a></li>
             <li class="header__mobileLink"><a href="/my-products">Mijn Producten</a></li>
+                        <li class="header__mobileLink"><a href="/my-lend-requests">Mijn Aanvragen</a></li>
+            <li class="header__mobileLink"><a href="/my-current-lends">Lenen & Uitlenen</a></li>
             <li class="header__mobileLink">
                 <a href="/users/{{Auth::user()->id}}">
                     Mijn Profiel ({{Auth::user()->name}})

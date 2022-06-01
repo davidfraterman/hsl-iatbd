@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             ReviewsTableSeeder::class,
             ProductsTableSeeder::class,
             MaxLendPeriodsTableSeeder::class,
+            CurrentLendsTableSeeder::class,
+            LendRequestsTableSeeder::class,
         ]);
     }
 }

@@ -5,17 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class LendRequest extends Model
 {
     use HasFactory;
-
     public $timestamps = false;
 
-    protected $table = 'reviews';
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    protected $table = 'lend_requests';
+
 
 }

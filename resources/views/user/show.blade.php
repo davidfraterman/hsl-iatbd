@@ -1,5 +1,5 @@
 @section('title')
-    {{"Add Product"}}
+    {{'Gebruiker ' . $user->name}}
 @endsection
 
 @extends('body')
