@@ -17,12 +17,12 @@
 
             <label class="formCard__inputGroup" for="rating">
                 Aantal sterren
-                <input class="formCard__textInput" name="rating" id="rating" type="number"/>
+                <input class="formCard__textInput" name="rating" required id="rating" type="number" min="1" step="1" max="5"/>
             </label>
 
             <label class="formCard__inputGroup" for="comment">
                 Commentaar
-                <input class="formCard__textInput" name="comment" id="comment" type="text"/>
+                <input class="formCard__textInput" name="comment" id="comment" required type="text"/>
             </label>
 
             <button class="primaryButton" type="submit">Review Plaatsen</button>

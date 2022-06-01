@@ -12,6 +12,12 @@
             @foreach ($lends as $lend)
                 @include('my-current-lends.components.myCurrentLendCard--index')
             @endforeach
+
+            @if($amount_of_lends == 0)
+                <p>
+                    Niemand leent je producten op dit moment.
+                </p>
+            @endif
         </section>
     </article>
     <article>
@@ -20,6 +26,12 @@
             @foreach ($borrows as $borrow)
                 @include('my-current-lends.components.myCurrentBorrowCard--index')
             @endforeach
+
+            @if($amount_of_borrows == 0)
+                <p>
+                    Je leent op dit moment geen producten van iemand.
+                </p>
+            @endif
         </section>
     </article>
 </main>

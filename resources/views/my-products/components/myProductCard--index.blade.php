@@ -1,7 +1,7 @@
 <li class="allProducts__listItem" data-category="{{$product->category}}" data-is-lended-out="{{$product->is_lended_out}}">
     <article>
         <figure class="allProducts__listItem--figure">
-            <img class="allProducts__listItem--image" src="/img/{{$product->image}}" alt="{{$product->description}}">
+            <img class="allProducts__listItem--image" src="{{$product->image}}" alt="{{$product->description}}">
         </figure>
         <section class="allProduct__listItem--content">
             <h2 class="allProducts__listItem--title">{{$product->name}}</h2>

@@ -1,7 +1,7 @@
 <li class="allProducts__listItem" data-category="{{$product->category}}" data-product-id="{{$product->id}}">
     <article>
         <figure class="allProducts__listItem--figure">
-            <img class="allProducts__listItem--image" src="/img/{{$product->image}}" alt="{{$product->description}}">
+            <img class="allProducts__listItem--image" src="{{$product->image}}" alt="{{$product->description}}">
              <section class="allProducts__listItem--owner">
                 <a href="/users/{{$product->owner_id}}">
                     <span class="iconify" data-icon="bxs:user" style="color: var(--clr-white); font-size: 15px;"></span>

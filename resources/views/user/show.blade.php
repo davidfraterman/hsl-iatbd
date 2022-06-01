@@ -13,7 +13,7 @@
                 <span class="iconify" data-icon="bxs:user" style="color: var(--clr-black); font-size: 30px;"></span>
                 {{$user->name}}
                 @if($user->role == 'blocked')
-                    (Banned user)
+                    <p class="userProfile__bannedText">(Geblokkeerde gebruiker)</p>
                 @endif
 
             </h2>
@@ -26,9 +26,8 @@
                 <span class="iconify" data-icon="bx:bx-star" style="color: var(--clr-primary); font-size: 18px;"></span>
                 {{round($average_rating, 1);}}/5 Gebaseerd op {{$amount_of_ratings}} beoordelingen
             </p>
-            
-            
         </section>
+
         <section class="userProducts">
             <h3 class="userProfile__subTitle">{{$user->name}}'s Producten</h3>
             <ul class="allProducts__list">

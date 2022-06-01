@@ -41,5 +41,19 @@ class ReviewsTableSeeder extends Seeder
             'rating' => 2,
             'comment' => 'Product is anders dan vermeld..',
         ]);
+
+        DB::table('reviews')->insert([
+            'user_id' => 1,
+            'lender_id' => 3,
+            'rating' => 1,
+            'comment' => 'Ik wilde een doos lenen maar kreeg een lege doos opgestuurd',
+        ]);
+
+        DB::table('reviews')->insert([
+            'user_id' => 2,
+            'lender_id' => 3,
+            'rating' => 2,
+            'comment' => 'Bedankt voor het lenen van de mok, maar het product is niet zo goed als ik verwacht had.',
+        ]);
     }
 }

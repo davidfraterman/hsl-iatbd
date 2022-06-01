@@ -6,7 +6,7 @@
         <ul class="header__links">
             <li class="header__link u-hover-underline-animation"><a href="/">Alle Producten</a></li>
             <li class="header__link u-hover-underline-animation"><a href="/my-products">Mijn Producten</a></li>
-            <li class="header__link u-hover-underline-animation"><a href="/my-current-lends">Dashboard</a></li>
+            <li class="header__link u-hover-underline-animation"><a href="/my-current-lends">Mijn Dashboard</a></li>
             <li class="header__link u-hover-underline-animation"><a href="/my-lend-requests">Inbox</a></li>
             <li class="header__link u-hover-underline-animation">
                 <a href="/users/{{Auth::user()->id}}">
@@ -17,12 +17,12 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
                     <x-dropdown-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         <!-- logout icon -->
-                        <span class="iconify" data-icon="carbon:logout" style="color: #FBFBFB; font-size: 20px;"></span>                    </x-dropdown-link>
+                        <span class="iconify" data-icon="carbon:logout" style="color: #FBFBFB; font-size: 20px;"></span>                    
+                    </x-dropdown-link>
                 </form>
             </li>
         </ul>
@@ -31,7 +31,7 @@
             <span class="iconify header__mobileLinks--close" id="js--header__mobileLinks--close" data-icon="carbon:close" style="font-size: 40px;"></span>
             <li class="header__mobileLink"><a href="/">Alle Producten</a></li>
             <li class="header__mobileLink"><a href="/my-products">Mijn Producten</a></li>
-            <li class="header__mobileLink"><a href="/my-current-lends">Dashboard</a></li>
+            <li class="header__mobileLink"><a href="/my-current-lends">Mijn Dashboard</a></li>
             <li class="header__mobileLink"><a href="/my-lend-requests">Inbox</a></li>
             <li class="header__mobileLink">
                 <a href="/users/{{Auth::user()->id}}">

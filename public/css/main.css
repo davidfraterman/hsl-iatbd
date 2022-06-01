@@ -157,6 +157,7 @@ h3 {
     margin-bottom: 2rem;
 }
 
+
 .allProducts__filters {
     margin-bottom: 4rem;
 }
@@ -178,7 +179,6 @@ h3 {
 }
 
 .allProducts__listItem {
- 
     background-color: white;
     box-shadow: 3px 3px 20px -5px rgba(58, 107, 93, 0.15);
     border-radius: 2rem;
@@ -192,6 +192,7 @@ h3 {
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem;
+    height: 100%;
 }
 
 .allProducts__listItem--info {
@@ -488,6 +489,12 @@ h3 {
 
 .formCard__inputGroup:first-child {
     margin-top: 2rem;
+}
+
+.userProfile__bannedText {
+    color: rgb(137, 37, 37);
+    font-weight: 600;
+    font-size: 2.25rem;
 }
 
 .userProfile__userInfoWithIcon {

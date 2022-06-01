@@ -62,13 +62,23 @@ class ProductsController extends Controller
     }
 
     public function store(Request $request, Product $product) {
+        
         $product->name = $request->input('name');
         $product->owner_id = auth()->user()->id;
         $product->category = $request->input('category');
         $product->description = $request->input('description');
-        $product->image = 'product1.jpg';
         $product->max_lend_time = $request->input('max_lend_time');
-        $product->save();
+
+        if($request->file('image')) {
+            $image = $request->file('image');
+            $image_name = time() . '-' . $image->getClientOriginalName();
+            
+            $product->image = '/img/' . $image_name;
+            $image->move(public_path('img'), $image_name);
+        } else {
+            $product->image = '/img/default.png';
+        }
+
 
         try {
             $product->save();
@@ -82,7 +92,7 @@ class ProductsController extends Controller
 
     public function delete($id) {
         $product = Product::find($id);
-        $product->delete();
+        $image_path = public_path('img/' . $product->image);
 
         if(CurrentLend::where('product_id', $id)->first()) {
             $current_lend = CurrentLend::where('product_id', $id)->first();
@@ -92,6 +102,10 @@ class ProductsController extends Controller
         if(LendRequest::where('product_id', $id)->first()) {
             $lend_request = LendRequest::where('product_id', $id)->first();
             $lend_request->delete();
+        }
+
+        if(file_exists($image_path)) {
+            unlink($image_path);
         }
         
         try {

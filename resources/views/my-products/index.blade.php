@@ -14,6 +14,12 @@
         @foreach ($products as $product)
             @include('my-products.components.myProductCard--index')
         @endforeach
+
+        @if($amount_of_products == 0)
+            <p>
+                Je hebt op dit moment geen producten toegevoegd, maak er een aan door op de knop rechtsboven te klikken.
+            </p>
+        @endif
     </ul>
 </main>
 

@@ -9,7 +9,7 @@
     <section class="breadCrumbs">All Products > {{$product->category}} > {{$product->name}}</section>
     <article class="oneProduct">
         <figure class="oneProduct__figure">
-            <img src="/img/{{$product->image}}" alt="{{$product->description}}" class="oneProduct__image">
+            <img src="{{$product->image}}" alt="{{$product->description}}" class="oneProduct__image">
         </figure>
         <section class="oneProduct__content">
             <h1 class="oneProduct__title">{{$product->name}}</h1>
@@ -29,7 +29,12 @@
                 <span class="iconify" data-icon="bxs:user" style="color: var(--clr-black); font-size: 25px;"></span>
                 <section class="oneProduct__productOwner--details">
                     <p>
-                        Eigenaar: {{$product_owner->name}}
+                        Eigenaar:
+                        @if(Auth::user()->id == $product->owner_id)
+                            Ik
+                        @else
+                            {{$product_owner->name}}
+                        @endif
                     </p>
                     <p>
                         E-mail: {{$product_owner->email}}
@@ -46,11 +51,10 @@
             @endif
 
             @if($has_user_already_requested == 1)
-                <button type="submit" class="disabledButton">Je hebt dit product al aangevraagd</button>
+                <button type="submit" class="disabledButton">Je hebt dit product aangevraagd</button>
             @elseif($is_already_lent_out == 1)
-                <button type="submit" class="disabledButton">Product wordt al geleend</button>
+                <button type="submit" class="disabledButton">Product niet beschikbaar</button>
             @endif
-            
 
             @if(Auth::user()->role == 'admin')
                 <h3 class="adminFunctions__title">Admin Functies</h3>  

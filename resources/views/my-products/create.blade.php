@@ -8,7 +8,7 @@
 <main>
     <article class="formContainer">
       
-        <form class="formCard" action="/my-products/create" method="POST">
+        <form class="formCard" action="/my-products/create" method="POST" enctype="multipart/form-data">
             <a href="/my-products">
                 <span  class="formCard__backBtn iconify" data-icon="bx:bx-arrow-back" data-inline="false"></span>
             </a>
@@ -17,7 +17,7 @@
             <label class="formCard__inputGroup" for="name">
                 Product naam
 
-                <input class="formCard__textInput" name="name" id="name" type="text"/>
+                <input class="formCard__textInput" name="name" id="name" type="text" required/>
             </label>
 
             <label class="formCard__inputGroup" for="category">
@@ -40,11 +40,13 @@
                 </select>
             </label>
 
+            <label for="image">
+                <input type="file" class="form-control" accept="image/*" name="image">    
+            </label>
 
             <label class="formCard__inputGroup" for="description">
                 Beschrijving
-                <textarea  class="formCard__textInput" rows="4" cols="50" name="description" id="description" type="text">
-                </textarea>
+                <textarea  class="formCard__textInput" rows="4" cols="50" name="description" id="description" value="" type="text" required></textarea>
                 
             </label>
 

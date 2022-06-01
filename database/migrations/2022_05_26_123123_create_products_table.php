@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->integer('owner_id');
             $table->string('name');
             $table->string('description');
-            $table->string('image');
+            $table->string('image')->default('product1.jpg');
             $table->string('category');
             $table->string('max_lend_time');
             $table->boolean('is_lended_out')->default(false);
