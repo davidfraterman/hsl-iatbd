@@ -1,7 +1,7 @@
 :root {
-    --clr-primary: #207c60;
+    --clr-primary: #16795b;
     --clr-white: #FBFBFB;
-    --clr-black: #383838;
+    --clr-black: #3c3c3c;
     --clr-light-grey: #e2e2e2;
     --clr-light-primary: #43907916;
     --clr-grey: #7e7e7e;
@@ -23,6 +23,14 @@ body {
     font-size: 1.6rem;
     background-color: var(--clr-white);
     font-family: 'Poppins', sans-serif;
+}
+
+.blockedBody {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
 }
 
 button:hover, a:hover {
@@ -149,6 +157,20 @@ h3 {
     margin-bottom: 2rem;
 }
 
+.allProducts__filters {
+    margin-bottom: 4rem;
+}
+
+.allProducts__filterInputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.allProducts__filterInputs > label {
+    width: 100%;
+}
+
+
 .allProducts__list {
     display: grid;
     grid-template-columns: 1fr;
@@ -263,6 +285,33 @@ h3 {
 
 .primaryButton:hover {
     box-shadow: 3px 3px 29px -14px rgba(0, 0, 0, 0.65);
+}
+
+.adminFunctions__title {
+    margin-top: 4rem;
+    color: rgb(185, 85, 85);
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.redButton {
+    background-color: rgb(185, 85, 85);
+    color: var(--clr-white) !important;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    box-shadow: 3px 3px 29px -14px rgba(0, 0, 0, 0.20);
+    transition: 0.2s all;
+    width: 100%;
+    text-decoration: none;
+    margin-top: 1rem;
+    max-width: 30rem;
+}
+
+.redButton:hover {
+    box-shadow: 3px 3px 29px -14px rgba(55, 47, 47, 0.75);
 }
 
 .secondaryButton {
@@ -655,6 +704,15 @@ a:visited {
 
     .u-card-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .allProducts__filterInputs {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .allProducts__searchBtn {
+        width: 15rem;
     }
 }
 

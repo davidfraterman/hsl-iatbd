@@ -29,4 +29,20 @@ class UsersController extends Controller
             'average_rating' => $average_rating,
         ]);
     }
+
+    public function block($id) {
+        $user = User::find($id);
+        $user->role = 'blocked';
+        $user->save();
+
+        return redirect('/users/' . $id);
+    }
+
+    public function unblock($id) {
+        $user = User::find($id);
+        $user->role = 'user';
+        $user->save();
+
+        return redirect('/users/' . $id);
+    }
 }

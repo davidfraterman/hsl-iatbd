@@ -19,9 +19,16 @@ use \App\Http\Controllers\CurrentLendsController;
 |
 */
 
+Route::middleware(['auth'], ['role'])->group(function() {
+    Route::delete('/products/{id}/delete', [ProductsController::class, 'delete']);
+    Route::get('/users/{id}/block', [UsersController::class, 'block']);
+    Route::get('/users/{id}/unblock', [UsersController::class, 'unblock']);
+});
+
 Route::middleware(['auth'])->group(function() {
     Route::get('/', [ProductsController::class, 'index']);
     Route::get('/products/{id}', [ProductsController::class, 'show']);
+
 
     Route::get('/users/{id}', [UsersController::class, 'show']);
 
@@ -34,9 +41,9 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/my-current-lends', [CurrentLendsController::class, 'index']);
 
     Route::post('/my-lend-requests/create', [LendRequestsController::class, 'store']);
-    Route::post('/my-lend-requests/delete', [LendRequestsController::class, 'delete']);
+    Route::delete('/my-lend-requests/delete', [LendRequestsController::class, 'delete']);
     Route::post('/my-current-lends/create', [CurrentLendsController::class, 'store']);
-    Route::post('/my-current-lends/delete', [CurrentLendsController::class, 'delete']);
+    Route::delete('/my-current-lends/delete', [CurrentLendsController::class, 'delete']);
 
     Route::get('/users/{id}/review/create', [ReviewsController::class, 'create']);
     Route::post('/users/{id}/review/create', [ReviewsController::class, 'store']);

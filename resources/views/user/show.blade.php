@@ -12,6 +12,10 @@
                 <!-- user icon -->
                 <span class="iconify" data-icon="bxs:user" style="color: var(--clr-black); font-size: 30px;"></span>
                 {{$user->name}}
+                @if($user->role == 'blocked')
+                    (Banned user)
+                @endif
+
             </h2>
             <p class="userProfile__userInfoWithIcon">
                 <span class="iconify" data-icon="bx:bx-envelope" style="color: var(--clr-primary); font-size: 18px;"></span>
@@ -20,7 +24,7 @@
             <p class="userProfile__userInfoWithIcon">
                 <!-- star icon -->
                 <span class="iconify" data-icon="bx:bx-star" style="color: var(--clr-primary); font-size: 18px;"></span>
-                {{$average_rating}}/5 Gebaseerd op {{$amount_of_ratings}} beoordelingen
+                {{round($average_rating, 1);}}/5 Gebaseerd op {{$amount_of_ratings}} beoordelingen
             </p>
             
             
@@ -42,6 +46,25 @@
                 @endforeach
             </ul>
         </section>
+
+        @if(Auth::user()->role == 'admin' && $user->id != Auth::user()->id && $user->role != 'blocked') 
+            <h3 class="adminFunctions__title">Admin Functies</h3>    
+
+            <form method="GET" action="/users/{{$user->id}}/block">
+                @csrf
+                <button type="submit" class="redButton">Gebruiker Blokkeren</button>
+            </form>
+        @elseif(Auth::user()->role == 'admin' && Auth::user()->id == $user->id)    
+            <h3 class="adminFunctions__title">Admin Functies</h3>
+            <button class="redButton disabledButton">Je kan jezelf niet blokkeren</button>
+        @elseif($user->role == 'blocked')
+            <h3 class="adminFunctions__title">Admin Functies</h3>
+
+            <form method="GET" action="/users/{{$user->id}}/unblock">
+                @csrf
+                <button type="submit" class="redButton">Blokkering Opheffen</button>
+            </form>
+        @endif
     </article>
 </main>
 

@@ -19,5 +19,18 @@
     
         <title>@yield('title')</title>
     </head>
-    @yield('body')
+    <!-- if is blocked -->
+    @if(Auth::user()->role == 'blocked')
+        <body class="blockedBody">
+            <h1>Sorry, u bent verbannen</h1>
+            <p>Als u denkt dat dit een fout is, neem dan contact met ons op.</p>
+            <!-- log out -->
+            <form method="POST" action="/logout">
+                @csrf
+                <button type="submit" class="redButton">Uitloggen</button>
+            </form>
+        </body>
+    @else
+        @yield('body')
+    @endif
 </html>

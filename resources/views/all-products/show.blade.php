@@ -37,18 +37,30 @@
                 </section>
             </a>
 
-            
+            @if(Auth::user()->id != $product->owner_id && $is_already_lent_out == 0 && $has_user_already_requested == 0)
+            <form method="POST" action="/my-lend-requests/create">
+                @csrf
+                <input type="hidden" value="{{$product->id}}" name="product_id">
+                <button type="submit" class="primaryButton">Product Aanvragen</button>
+            </form>  
+            @endif
 
-            @if($product_owner->id == Auth::user()->id)       
-                <button type="disabled" class="disabledButton primaryButton">Dit is uw product</button>     
-            @else
-                <form method="POST" action="/my-lend-requests/create">
-                    @csrf
-                    <input type="hidden" value="{{$product->id}}" name="product_id">
-                <button type="submit" class="primaryButton">Lenen Aanvragen</button>
-            </form>       
+            @if($has_user_already_requested == 1)
+                <button type="submit" class="disabledButton">Je hebt dit product al aangevraagd</button>
+            @elseif($is_already_lent_out == 1)
+                <button type="submit" class="disabledButton">Product wordt al geleend</button>
             @endif
             
+
+            @if(Auth::user()->role == 'admin')
+                <h3 class="adminFunctions__title">Admin Functies</h3>  
+                
+                <form method="POST" action="/products/{{$product->id}}/delete">
+                    <input name="_method" type="hidden" value="DELETE">
+                    @csrf
+                    <button type="submit" class="redButton">Product Verwijderen</button>
+                </form>
+            @endif
         </section>
         
     </article>

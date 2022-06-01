@@ -21,5 +21,9 @@ class RolesTableSeeder extends Seeder
         DB::table('roles')->insert([
             'role' => 'user',
         ]);
+
+        DB::table('roles')->insert([
+            'role' => 'blocked',
+        ]);
     }
 }

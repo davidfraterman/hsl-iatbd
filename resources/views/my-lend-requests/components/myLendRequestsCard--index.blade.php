@@ -19,6 +19,7 @@
     </form>
 
     <form method="POST" action="/my-lend-requests/delete">
+        <input name="_method" type="hidden" value="DELETE">
         @csrf
         <input type="hidden" value="{{$lend_request->product_id}}" name="product_id">
         <input type="hidden" value="{{$lend_request->requester_id}}" name="requester_id">

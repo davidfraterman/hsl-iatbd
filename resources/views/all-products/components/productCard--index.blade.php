@@ -1,4 +1,4 @@
-<li class="allProducts__listItem" data-category="{{$product->category}}">
+<li class="allProducts__listItem" data-category="{{$product->category}}" data-product-id="{{$product->id}}">
     <article>
         <figure class="allProducts__listItem--figure">
             <img class="allProducts__listItem--image" src="/img/{{$product->image}}" alt="{{$product->description}}">

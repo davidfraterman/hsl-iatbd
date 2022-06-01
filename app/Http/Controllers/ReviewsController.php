@@ -22,7 +22,7 @@ class ReviewsController extends Controller
 
         try {
             $review->save();
-            return redirect('/users/' . $review->lender_id);
+            return redirect('/my-current-lends');
         } catch(Exception $e) {
             return redirect('/users/' . $request->input('lender_id') . '/review/create');
         }

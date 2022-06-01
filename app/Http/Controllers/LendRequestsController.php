@@ -32,12 +32,10 @@ class LendRequestsController extends Controller
         
         try {
             $lend_request->save();
-            return redirect('/');
+            return redirect('/my-current-lends');
         } catch(Exception $e) {
-            return redirect('/my-lend-requests');
+            return redirect('/my-current-lends');
         }
-
-        return redirect('/my-lend-requests');
     }
 
     public function delete(Request $request, LendRequest $lend_request) {

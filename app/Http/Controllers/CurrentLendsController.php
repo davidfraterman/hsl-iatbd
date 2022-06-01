@@ -52,12 +52,10 @@ class CurrentLendsController extends Controller
             $current_lend->save();
             $product->save();
             $lend_request->delete();
-            return redirect('/');
+            return redirect('/my-lend-requests');
         } catch(Exception $e) {
-            return redirect('/my-current-lends/create');
+            return redirect('/my-lend-requests');
         }
-
-        return redirect('/my-current-lends/create');
     }
 
     public function delete(Request $request, CurrentLend $current_lend) {
