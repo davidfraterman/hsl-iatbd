@@ -42,12 +42,16 @@
                 </section>
             </a>
 
-            @if(Auth::user()->id != $product->owner_id && $is_already_lent_out == 0 && $has_user_already_requested == 0)
-            <form method="POST" action="/my-lend-requests/create">
-                @csrf
-                <input type="hidden" value="{{$product->id}}" name="product_id">
-                <button type="submit" class="primaryButton">Product Aanvragen</button>
-            </form>  
+            @if($is_already_lent_out == 0 && $has_user_already_requested == 0)
+                @if(Auth::user()->id != $product->owner_id)
+                    <form method="POST" action="/my-lend-requests/create">
+                        @csrf
+                        <input type="hidden" value="{{$product->id}}" name="product_id">
+                        <button type="submit" class="primaryButton">Product Aanvragen</button>
+                    </form>  
+                @elseif(Auth::user()->id == $product->owner_id)
+                    <button type="submit" class="disabledButton">Je kan niet je eigen product lenen</button>
+                @endif
             @endif
 
             @if($has_user_already_requested == 1)
