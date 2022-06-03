@@ -19,12 +19,14 @@ use \App\Http\Controllers\CurrentLendsController;
 |
 */
 
+// ingelogd en admin
 Route::middleware(['auth'], ['role'])->group(function() {
     Route::delete('/products/{id}/delete', [ProductsController::class, 'delete']);
     Route::get('/users/{id}/block', [UsersController::class, 'block']);
     Route::get('/users/{id}/unblock', [UsersController::class, 'unblock']);
 });
 
+// ingelogd
 Route::middleware(['auth'])->group(function() {
     Route::get('/', [ProductsController::class, 'index']);
     Route::get('/products/{id}', [ProductsController::class, 'show']);
